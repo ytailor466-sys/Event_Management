@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diligent Events - Turning Dreams Into Reality</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #E91E63;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #E91E63;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #E91E63;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #E91E63, #FF6B9D);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #E91E63;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-header {
+            background: linear-gradient(135deg, #E91E63, #FF6B9D);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .service-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+
+        .service-features li:before {
+            content: "✨ ";
+            margin-right: 0.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #E91E63;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #E91E63;
+        }
+
+        .stat-label {
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .collections {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .collection-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(233, 30, 99, 0.2);
+        }
+
+        .collection-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(233, 30, 99, 0.1), rgba(255, 107, 157, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .collection-card:hover::before {
+            opacity: 1;
+        }
+
+        .collection-header {
+            background: linear-gradient(135deg, #E91E63, #FF6B9D);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .collection-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .collection-header .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .collection-content {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .collection-description {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .collection-count {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #E91E63;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .collection-button {
+            background: linear-gradient(45deg, #E91E63, #FF6B9D);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .collection-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: #E91E63;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item h4 {
+            color: #E91E63;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .phone-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .phone-number {
+            background: linear-gradient(45deg, #E91E63, #FF6B9D);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s;
+        }
+
+        .phone-number:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-numbers {
+                flex-direction: column;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .service-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .service-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .gallery {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-category {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-header {
+            background: linear-gradient(135deg, #E91E63, #FF6B9D);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .gallery-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            padding: 1rem;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-image.large {
+            grid-column: span 2;
+            height: 150px;
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-image:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .hero-image:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        .hero-image:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .image-modal-content {
+            display: block;
+            margin: 5% auto;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #E91E63;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <img src="Dlogo.png" style="object-fit: cover; width: 150px; height: 50px;">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>DILIGENT EVENTS</h1>
+            <p>Turning Dreams Into Reality</p>
+            <div class="hero-images">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(45deg, #E91E63, #FF6B9D); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); animation: float 3s ease-in-out infinite;">🎉</div>
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(45deg, #FFD700, #FFA500); display: flex; align-items: center; justify-content: center; color: #E91E63; font-weight: bold; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); animation: float 3s ease-in-out infinite; animation-delay: 0.5s;">💐</div>
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(45deg, #E91E63, #FF6B9D); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); animation: float 3s ease-in-out infinite; animation-delay: 1s;">💒</div>
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(45deg, #FFD700, #FFA500); display: flex; align-items: center; justify-content: center; color: #E91E63; font-weight: bold; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); animation: float 3s ease-in-out infinite; animation-delay: 1.5s;">🎊</div>
+            </div>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('wedding')">
+                    <div class="service-header">
+                        <h3>Wedding Celebrations</h3>
+                    </div>
+                    <div class="service-content">
+                        <img src="Wedding2.jpg" style="object-fit: cover; width: 330px; height: 300px;">
+                        <!-- <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #FFD700, #FFA500); border-radius: 10px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #E91E63; font-size: 3rem;">💒</div> -->
+                        <p class="service-description">Complete wedding ceremony arrangements from traditional to contemporary styles.</p>
+                        <ul class="service-features">
+                            <li>Haldi Decoration</li>
+                            <li>Bhat Decoration</li>
+                            <li>Sangeet Decoration</li>
+                            <li>Reception Decoration</li>
+                            <li>Mehandi Decoration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card" onclick="openModal('religious')">
+                    <div class="service-header">
+                        <h3>Religious Ceremonies</h3>
+                    </div>
+                    <div class="service-content">
+                        <!-- <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #E91E63, #FF6B9D); border-radius: 10px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🕉️</div> -->
+                        <img src="Religious1.jpg" style="object-fit: cover; width: 330px; height: 300px;">
+                        <p class="service-description">Sacred and spiritual decorations for religious occasions and festivals.</p>
+                        <ul class="service-features">
+                            <li>Shri Ganesh Decoration</li>
+                            <li>Temple Style Setups</li>
+                            <li>Festival Decorations</li>
+                            <li>Pooja Arrangements</li>
+                            <li>Traditional Themes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card" onclick="openModal('celebrations')">
+                    <div class="service-header">
+                        <h3>Special Celebrations</h3>
+                    </div>
+                    <div class="service-content">
+                        <img src="Birthday.png" style="object-fit: cover; width: 330px; height: 300px;">
+                        <!-- <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #FFD700, #FFA500); border-radius: 10px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: #E91E63; font-size: 3rem;">🎂</div> -->
+                        <p class="service-description">Making every special moment memorable with customized decorations.</p>
+                        <ul class="service-features">
+                            <li>Birthday Decorations</li>
+                            <li>Engagement Celebrations</li>
+                            <li>Anniversary Parties</li>
+                            <li>Corporate Events</li>
+                            <li>Baby Showers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card" onclick="openModal('premium')">
+                    <div class="service-header">
+                        <h3>Premium Services</h3>
+                    </div>
+                    <div class="service-content">
+                        <img src="Flower.png" style="object-fit: cover; width: 330px; height: 300px;">
+                        <!-- <div style="width: 100%; height: 200px; background: linear-gradient(45deg, #E91E63, #FF6B9D); border-radius: 10px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">✨</div> -->
+                        <p class="service-description">Luxury event planning with exclusive themes and premium decorations.</p>
+                        <ul class="service-features">
+                            <li>Flower & Light Decoration</li>
+                            <li>Mandap Decoration</li>
+                            <li>Corridor Gallery Setup</li>
+                            <li>Catering Services</li>
+                            <li>Complete Event Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-category">
+                    <div class="gallery-header">Haldi Decoration</div>
+                    <div class="gallery-images">
+                        <img src="HaldiPhotio.png" style="object-fit: cover; width: 330px; height: 300px;">
+                    </div>
+                </div>
+
+                <div class="gallery-category">
+                    <div class="gallery-header">Bhat Decoration</div>
+                    <div class="gallery-images">
+                        <img src="Bhat.png" style="object-fit: cover; width: 330px; height: 300px;">
+                    </div>
+                </div>
+
+                <div class="gallery-category">
+                    <div class="gallery-header">Sangeet Decoration</div>
+                    <div class="gallery-images">
+                        <img src="Sangeet.png" style="object-fit: cover; width: 330px; height: 300px;">
+                    </div>
+                </div>
+
+                <div class="gallery-category">
+                    <div class="gallery-header">Reception Decoration</div>
+                    <div class="gallery-images">
+                        <img src="Reception.jpg" style="object-fit: cover; width: 330px; height: 300px;">
+                    </div>
+                </div>
+
+                <div class="gallery-category">
+                    <div class="gallery-header">Mehandi Decoration</div>
+                    <div class="gallery-images">
+                        <img src="Mehandi.png" style="object-fit: cover; width: 330px; height: 300px;">
+                    </div>
+                </div>
+
+                <div class="gallery-category">
+                    <div class="gallery-header">Birthday Decoration</div>
+                    <div class="gallery-images">
+                        <img src="Bday.png" style="object-fit: cover; width: 330px; height: 300px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Collections Section -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Explore our curated photo collections showcasing our finest work</p>
+            
+            <div class="collections-grid">
+                <div class="collection-card" onclick="openCollectionModal('traditional')">
+                    <div class="collection-header">
+                        <span class="emoji">💒</span>
+                        <h3>Wedding Events</h3>
+                    </div>
+                    <div class="collection-content">
+                        <div class="collection-count">5 Photos</div>
+                        <p class="collection-description">Authentic traditional setups with cultural elements, perfect for religious ceremonies and classic celebrations.</p>
+                        <button class="collection-button">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="collection-card" onclick="openCollectionModal('modern')">
+                    <div class="collection-header">
+                        <span class="emoji">✨</span>
+                        <h3>Religious Events</h3>
+                    </div>
+                    <div class="collection-content">
+                        <div class="collection-count">5 Photos</div>
+                        <p class="collection-description">Contemporary designs with sophisticated styling for modern weddings and corporate events.</p>
+                        <button class="collection-button">View Collection</button>
+                    </div>
+                </div>
+
+                <div class="collection-card" onclick="openCollectionModal('luxury')">
+                    <div class="collection-header">
+                        <span class="emoji">👑</span>
+                        <h3>Others Events</h3>
+                    </div>
+                    <div class="collection-content">
+                        <div class="collection-count">5 Photos</div>
+                        <p class="collection-description">Opulent decorations with premium materials for exclusive high-end celebrations and grand events.</p>
+                        <button class="collection-button">View Collection</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="collectionModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeCollectionModal()">&times;</span>
+                <h3 id="modal-title"></h3>
+                <div id="modal-photos" class="photo-grid"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Diligent Events</h2>
+                    <p>We are a premier event management company dedicated to turning your dreams into reality. With years of experience in creating magical moments, we specialize in traditional Indian celebrations, modern parties, and everything in between.</p>
+                    <p>Our team of creative professionals ensures every detail is perfect, from stunning decorations to seamless event coordination. We believe every celebration should be unique and memorable.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Events Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Decoration Themes</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Customer Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div style="background: linear-gradient(135deg, #E91E63, #FF6B9D); height: 400px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; text-align: center;">
+                        <div class="gallery-images">
+                           <img src="Memories.png" style="object-fit: cover; width: 560px; height: 300px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p style="font-size: 1.2rem; color: #333; margin-bottom: 2rem;">Ready to plan your dream event? Contact us today for a free consultation!</p>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <h4>📞 Phone Numbers</h4>
+                        <div class="phone-numbers">
+                            <a href="tel:+918058137090" class="phone-number">Mukesh: 8058137090</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>📍 Locations</h4>
+                        <p><strong>Mukundgarh Office:</strong><br>
+                        Near Kanoria Hospital Circle, College Road, Mukundgarh</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>🏢 Establishment</h4>
+                        <p>Shri Namdev Tent And Light House<br>
+                        Churi Ajitgarh, Ramgopal Tailor</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4>🎉 Services</h4>
+                        <p>Events Management • Girls Boys Services • Food And Beverage • Other Functions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Diligent Events. All rights reserved. | Turning Dreams Into Reality</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="wedding" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('wedding')">&times;</span>
+            <h2 style="color: #E91E63; margin-bottom: 1rem;">Wedding Celebrations</h2>
+            <p>Our wedding decoration services include complete arrangements for all ceremonies from engagement to reception. We create magical atmospheres with traditional and contemporary themes.</p>
+            <ul style="margin: 1rem 0; padding-left: 1rem;">
+                <li>Haldi Ceremony - Yellow themed decorations with marigolds</li>
+                <li>Bhat Ceremony - Traditional setup with cultural elements</li>
+                <li>Sangeet Night - Vibrant decorations with stage setup</li>
+                <li>Reception - Elegant arrangements with floral designs</li>
+                <li>Mehandi Function - Colorful and festive decorations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="religious" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('religious')">&times;</span>
+            <h2 style="color: #E91E63; margin-bottom: 1rem;">Religious Ceremonies</h2>
+            <p>We specialize in creating sacred atmospheres for religious ceremonies and festivals with authentic traditional decorations.</p>
+            <ul style="margin: 1rem 0; padding-left: 1rem;">
+                <li>Shri Ganesh Decorations - Traditional temple-style setups</li>
+                <li>Festival Celebrations - Customized for various occasions</li>
+                <li>Pooja Arrangements - Complete setup with all essentials</li>
+                <li>Sacred Thread Ceremonies - Traditional decorations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="celebrations" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('celebrations')">&times;</span>
+            <h2 style="color: #E91E63; margin-bottom: 1rem;">Special Celebrations</h2>
+            <p>Every milestone deserves a perfect celebration. We create customized decorations for all your special moments.</p>
+            <ul style="margin: 1rem 0; padding-left: 1rem;">
+                <li>Birthday Parties - Themed decorations for all ages</li>
+                <li>Engagement Ceremonies - Romantic and elegant setups</li>
+                <li>Anniversary Celebrations - Personalized arrangements</li>
+                <li>Corporate Events - Professional and impressive decorations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="premium" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('premium')">&times;</span>
+            <h2 style="color: #E91E63; margin-bottom: 1rem;">Premium Services</h2>
+            <p>Our premium services offer luxury event planning with exclusive themes, high-end decorations, and complete event management.</p>
+            <ul style="margin: 1rem 0; padding-left: 1rem;">
+                <li>Flower & Light Decorations - Premium floral arrangements</li>
+                <li>Mandap Decorations - Grand traditional setups</li>
+                <li>Corridor Gallery - Elegant pathway decorations</li>
+                <li>Complete Event Management - End-to-end services</li>
+                <li>Catering Services - Delicious food arrangements</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, #FFD700, #FFA500)';
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.2)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #FFD700, #FFA500)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+         const collections = {
+    traditional: {
+      title: 'Traditional Events',
+      images: [
+        'Wedding1.jpg',
+        'Wedding2.jpg',
+        'Wedding3.jpg',
+        'Wedding4.jpg',
+        'Wedding5.jpg',
+      ],
+    },
+    modern: {
+      title: 'Modern Elegance',
+      images: [
+        'Religious1.jpg',
+        'Religious2.jpg',
+        'Religious3.jpg',
+        'Religious4.jpg',
+        'Religious5.jpg',
+      ],
+    },
+    luxury: {
+      title: 'Luxury Premium',
+      images: [
+        'Others1.jpg',
+        'Others2.jpg',
+        'Others3.jpg',
+        'Others4.jpg',
+        'Others5.jpg',
+      ],
+    },
+  };
+
+  function openCollectionModal(collectionKey) {
+    const modal = document.getElementById('collectionModal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalPhotos = document.getElementById('modal-photos');
+
+    const collection = collections[collectionKey];
+
+    modalTitle.textContent = collection.title;
+    modalPhotos.innerHTML = collection.images
+      .map(src => `<img src="${src}" alt="Collection Photo" style="width: 150px; height: 100px; object-fit: cover; margin: 5px;">`)
+      .join('');
+
+    modal.style.display = 'block';
+  }
+
+  function closeCollectionModal() {
+    document.getElementById('collectionModal').style.display = 'none';
+  }
+    </script>
+</body>
+</html>
